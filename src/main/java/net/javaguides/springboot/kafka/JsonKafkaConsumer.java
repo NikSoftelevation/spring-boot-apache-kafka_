@@ -11,9 +11,9 @@ public class JsonKafkaConsumer {
 
 private static final Logger LOGGER= LoggerFactory.getLogger(JsonKafkaConsumer.class);
 
-@KafkaListener(topics="javaGuides_Json")
+@KafkaListener(topics="javaGuides_Json",groupId="myGroup")
 public void consume(User user){
 
-    LOGGER.info();
+    LOGGER.info(String.format("Json Message Received -> %s", user.toString()));
 }
 }
